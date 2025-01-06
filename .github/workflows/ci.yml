@@ -10,4 +10,6 @@ on:
 jobs:
     build-and-test:
         runs-on: ubuntu-latest
-        run: echo "prince"
+        steps:
+            run: echo "prince"
+            
