@@ -11,5 +11,5 @@ jobs:
     build-and-test:
         runs-on: ubuntu-latest
         steps:
-            run: echo "prince"
-            
+            run: ls
+
