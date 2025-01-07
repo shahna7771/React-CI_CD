@@ -22,9 +22,13 @@ jobs:
             - name: "copy the github repository"
               uses: actions/checkout@v2
 
+            - name: "list directories"
+              run: ls
+
             - name: "install dependencies"
               run: npm install
 
             - name: "list directories"
               run: ls
-
+              
+            
