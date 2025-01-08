@@ -1,0 +1,17 @@
+name: "sample react-cd pipeline"
+
+on: 
+    workflow_run:
+        workflows: ["sample React-CI pipeline"]
+        types: 
+            - completed
+
+jobs:
+    deploy:   #name of job
+        runs-on: ubuntu-latest
+        
+        steps:
+            - name: "dpwnload artifact"
+              uses: actions/download-artifact@v4
+              with:
+                name: build
