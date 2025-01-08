@@ -9,6 +9,7 @@ on:
 jobs:
     deploy:   #name of job
         runs-on: ubuntu-latest
+        environment: Vercel_Token_CI/CD
         
         steps:
             - name: "install nodejs"
@@ -27,7 +28,8 @@ jobs:
                 github-token: ${{github.token}}
 
             - name: "deploy to vercel"
-              run: vercel --prod --token=${{ secrets.Vercel_Token_CI/CD }} --confirm --name=cicdProject
+              run: vercel --prod --token=${{secrets.VERCEL_TOKEN}} --confirm --name=cicdProject
+              
 
 
 
