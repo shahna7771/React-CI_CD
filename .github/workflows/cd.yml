@@ -17,7 +17,7 @@ jobs:
                 node-version: '21'
 
             - name: "setup vercel cli"
-              run: vercel i -g vercel
+              run: npm i -g vercel
 
             - name: "download artifact"
               uses: actions/download-artifact@v4
