@@ -11,10 +11,20 @@ jobs:
         runs-on: ubuntu-latest
         
         steps:
-            - name: "dpwnload artifact"
+            - name: "install nodejs"
+              uses: actions/setup-node@v4
+              with: 
+                node-version: '21'
+
+            - name: "setup vercel cli"
+              run: vercel i -g vercel
+
+            - name: "download artifact"
               uses: actions/download-artifact@v4
               with:
                 name: build
+                run-id: ${{ github.event.workflow_run.id }}
+                github-token: ${{github.token}}
 
 
-                
+
